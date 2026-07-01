@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A0E10202C00000100000001 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10212C00000100000001 /* main.swift */; };
+		4A0E10222C00000100000001 /* FlockMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10232C00000100000001 /* FlockMember.swift */; };
+		4A0E10242C00000100000001 /* FlockParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10252C00000100000001 /* FlockParameters.swift */; };
+		4A0E10262C00000100000001 /* CursorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10272C00000100000001 /* CursorFrame.swift */; };
+		4A0E10282C00000100000001 /* SystemCursorSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10292C00000100000001 /* SystemCursorSampler.swift */; };
+		4A0E102A2C00000100000001 /* OrientationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E102B2C00000100000001 /* OrientationMode.swift */; };
+		4A0E102C2C00000100000001 /* OpacityMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E102D2C00000100000001 /* OpacityMode.swift */; };
+		4A0E102E2C00000100000001 /* FlockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E102F2C00000100000001 /* FlockSettings.swift */; };
+		4A0E10302C00000100000001 /* CursorOrientationClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10312C00000100000001 /* CursorOrientationClassifier.swift */; };
+		4A0E10322C00000100000001 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10332C00000100000001 /* MenuBarController.swift */; };
+		4A0E10342C00000100000001 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10352C00000100000001 /* LaunchAtLoginManager.swift */; };
+		4A0E10362C00000100000001 /* FlockSpeedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10372C00000100000001 /* FlockSpeedSettings.swift */; };
+		4A0E10382C00000100000001 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10392C00000100000001 /* SettingsStore.swift */; };
+		4A0E103A2C00000100000001 /* CursorRenderResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E103B2C00000100000001 /* CursorRenderResourceCache.swift */; };
+		4A0E103C2C00000100000001 /* RenderInstrumentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E103D2C00000100000001 /* RenderInstrumentation.swift */; };
+		4A0E100A2C00000100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10012C00000100000001 /* AppDelegate.swift */; };
+		4A0E100B2C00000100000001 /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10022C00000100000001 /* OverlayWindow.swift */; };
+		4A0E100C2C00000100000001 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10032C00000100000001 /* OverlayView.swift */; };
+		4A0E100E2C00000100000001 /* FlockSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10052C00000100000001 /* FlockSimulation.swift */; };
+		4A0E100F2C00000100000001 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10062C00000100000001 /* DisplayManager.swift */; };
+		4A0E10102C00000100000001 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E10072C00000100000001 /* Settings.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A0E10212C00000100000001 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4A0E10232C00000100000001 /* FlockMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlockMember.swift; sourceTree = "<group>"; };
+		4A0E10252C00000100000001 /* FlockParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlockParameters.swift; sourceTree = "<group>"; };
+		4A0E10272C00000100000001 /* CursorFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorFrame.swift; sourceTree = "<group>"; };
+		4A0E10292C00000100000001 /* SystemCursorSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCursorSampler.swift; sourceTree = "<group>"; };
+		4A0E102B2C00000100000001 /* OrientationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationMode.swift; sourceTree = "<group>"; };
+		4A0E102D2C00000100000001 /* OpacityMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityMode.swift; sourceTree = "<group>"; };
+		4A0E102F2C00000100000001 /* FlockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlockSettings.swift; sourceTree = "<group>"; };
+		4A0E10312C00000100000001 /* CursorOrientationClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorOrientationClassifier.swift; sourceTree = "<group>"; };
+		4A0E10332C00000100000001 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		4A0E10352C00000100000001 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
+		4A0E10372C00000100000001 /* FlockSpeedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlockSpeedSettings.swift; sourceTree = "<group>"; };
+		4A0E10392C00000100000001 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		4A0E103B2C00000100000001 /* CursorRenderResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorRenderResourceCache.swift; sourceTree = "<group>"; };
+		4A0E103D2C00000100000001 /* RenderInstrumentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderInstrumentation.swift; sourceTree = "<group>"; };
+		4A0E10012C00000100000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A0E10022C00000100000001 /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
+		4A0E10032C00000100000001 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		4A0E10052C00000100000001 /* FlockSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlockSimulation.swift; sourceTree = "<group>"; };
+		4A0E10062C00000100000001 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
+		4A0E10072C00000100000001 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4A0E10082C00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A0E10112C00000100000001 /* CursorFlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursorFlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A0E10122C00000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A0E10132C00000100000001 = {
+			isa = PBXGroup;
+			children = (
+				4A0E10142C00000100000001 /* CursorFlock */,
+				4A0E10152C00000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A0E10142C00000100000001 /* CursorFlock */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E10212C00000100000001 /* main.swift */,
+				4A0E10012C00000100000001 /* AppDelegate.swift */,
+				4A0E10332C00000100000001 /* MenuBarController.swift */,
+				4A0E10352C00000100000001 /* LaunchAtLoginManager.swift */,
+				4A0E10022C00000100000001 /* OverlayWindow.swift */,
+				4A0E10032C00000100000001 /* OverlayView.swift */,
+				4A0E10272C00000100000001 /* CursorFrame.swift */,
+				4A0E103B2C00000100000001 /* CursorRenderResourceCache.swift */,
+				4A0E10312C00000100000001 /* CursorOrientationClassifier.swift */,
+				4A0E10232C00000100000001 /* FlockMember.swift */,
+				4A0E102F2C00000100000001 /* FlockSettings.swift */,
+				4A0E10372C00000100000001 /* FlockSpeedSettings.swift */,
+				4A0E10052C00000100000001 /* FlockSimulation.swift */,
+				4A0E10252C00000100000001 /* FlockParameters.swift */,
+				4A0E102B2C00000100000001 /* OrientationMode.swift */,
+				4A0E102D2C00000100000001 /* OpacityMode.swift */,
+				4A0E10062C00000100000001 /* DisplayManager.swift */,
+				4A0E10292C00000100000001 /* SystemCursorSampler.swift */,
+				4A0E10072C00000100000001 /* Settings.swift */,
+				4A0E10392C00000100000001 /* SettingsStore.swift */,
+				4A0E103D2C00000100000001 /* RenderInstrumentation.swift */,
+				4A0E10082C00000100000001 /* Info.plist */,
+			);
+			path = CursorFlock;
+			sourceTree = "<group>";
+		};
+		4A0E10152C00000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E10112C00000100000001 /* CursorFlock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A0E10162C00000100000001 /* CursorFlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A0E10172C00000100000001 /* Build configuration list for PBXNativeTarget "CursorFlock" */;
+			buildPhases = (
+				4A0E10182C00000100000001 /* Sources */,
+				4A0E10122C00000100000001 /* Frameworks */,
+				4A0E10192C00000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CursorFlock;
+			productName = CursorFlock;
+			productReference = 4A0E10112C00000100000001 /* CursorFlock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A0E101A2C00000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					4A0E10162C00000100000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 4A0E101B2C00000100000001 /* Build configuration list for PBXProject "CursorFlock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A0E10132C00000100000001;
+			productRefGroup = 4A0E10152C00000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A0E10162C00000100000001 /* CursorFlock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A0E10192C00000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A0E10182C00000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A0E10202C00000100000001 /* main.swift in Sources */,
+				4A0E100A2C00000100000001 /* AppDelegate.swift in Sources */,
+				4A0E100B2C00000100000001 /* OverlayWindow.swift in Sources */,
+				4A0E100C2C00000100000001 /* OverlayView.swift in Sources */,
+				4A0E10222C00000100000001 /* FlockMember.swift in Sources */,
+				4A0E100E2C00000100000001 /* FlockSimulation.swift in Sources */,
+				4A0E100F2C00000100000001 /* DisplayManager.swift in Sources */,
+				4A0E10242C00000100000001 /* FlockParameters.swift in Sources */,
+				4A0E10262C00000100000001 /* CursorFrame.swift in Sources */,
+				4A0E10282C00000100000001 /* SystemCursorSampler.swift in Sources */,
+				4A0E102A2C00000100000001 /* OrientationMode.swift in Sources */,
+				4A0E102C2C00000100000001 /* OpacityMode.swift in Sources */,
+				4A0E102E2C00000100000001 /* FlockSettings.swift in Sources */,
+				4A0E10302C00000100000001 /* CursorOrientationClassifier.swift in Sources */,
+				4A0E10322C00000100000001 /* MenuBarController.swift in Sources */,
+				4A0E10342C00000100000001 /* LaunchAtLoginManager.swift in Sources */,
+				4A0E10362C00000100000001 /* FlockSpeedSettings.swift in Sources */,
+				4A0E103A2C00000100000001 /* CursorRenderResourceCache.swift in Sources */,
+				4A0E10102C00000100000001 /* Settings.swift in Sources */,
+				4A0E10382C00000100000001 /* SettingsStore.swift in Sources */,
+				4A0E103C2C00000100000001 /* RenderInstrumentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4A0E101C2C00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A0E101D2C00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4A0E101E2C00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CursorFlock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cursorflock.CursorFlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4A0E101F2C00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CursorFlock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cursorflock.CursorFlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A0E101B2C00000100000001 /* Build configuration list for PBXProject "CursorFlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A0E101C2C00000100000001 /* Debug */,
+				4A0E101D2C00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A0E10172C00000100000001 /* Build configuration list for PBXNativeTarget "CursorFlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A0E101E2C00000100000001 /* Debug */,
+				4A0E101F2C00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A0E101A2C00000100000001 /* Project object */;
+}

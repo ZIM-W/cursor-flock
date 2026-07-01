@@ -1,0 +1,16 @@
+.DS_Store
+DerivedData/
+build/
+release-output/
+*.app
+*.dmg
+*.zip
+*.xcarchive
+release-env.sh
+*.p12
+*.cer
+*.mobileprovision
+*.key
+*.pem
+xcuserdata/
+*.xcuserstate
