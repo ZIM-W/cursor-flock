@@ -1,6 +1,6 @@
 # Cursor Flock
 
-Cursor Flock is a lightweight macOS menu-bar utility that turns the real system cursor into a decorative visual flock. The real macOS cursor remains visible, fully functional, and the only interactive cursor.
+[Cursor Flock](https://github.com/ZIM-W/cursor-flock/releases/tag/v0.1.0) is a lightweight macOS menu-bar utility that turns the real system cursor into a decorative visual flock. The real macOS cursor remains visible, fully functional, and the only interactive cursor.
 
 ## Requirements
 
@@ -22,7 +22,7 @@ Cursor Flock does not use Electron, Tauri, web technologies, screenshots, input 
 
 ## Install From GitHub Releases
 
-1. Download `CursorFlock-VERSION-macos.dmg` and `CursorFlock-VERSION-macos.dmg.sha256` from GitHub Releases.
+1. Download `CursorFlock-VERSION-macos.dmg` and `CursorFlock-VERSION-macos.dmg.sha256` from [GitHub Releases](https://github.com/ZIM-W/cursor-flock/releases/tag/v0.1.0).
 2. (Optional)Verify the checksum:
 
 ```sh
