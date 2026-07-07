@@ -12,13 +12,19 @@ struct CursorRenderResource {
 @MainActor
 final class CursorRenderResourceCache {
     private var cachedRevision: UInt64?
+    private var cachedColorMode: CursorColorMode?
     private var resourcesByScale: [Int: CursorRenderResource] = [:]
 
-    func resource(for frame: CursorFrame, contentsScale: CGFloat) -> CursorRenderResource {
+    func resource(
+        for frame: CursorFrame,
+        contentsScale: CGFloat,
+        colorMode: CursorColorMode
+    ) -> CursorRenderResource {
         let normalizedScale = max(contentsScale, 1)
-        if cachedRevision != frame.revision {
+        if cachedRevision != frame.revision || cachedColorMode != colorMode {
             resourcesByScale.removeAll(keepingCapacity: true)
             cachedRevision = frame.revision
+            cachedColorMode = colorMode
         }
 
         let key = Self.scaleKey(normalizedScale)
@@ -26,7 +32,7 @@ final class CursorRenderResourceCache {
             return resource
         }
 
-        let resource = makeResource(for: frame, contentsScale: normalizedScale)
+        let resource = makeResource(for: frame, contentsScale: normalizedScale, colorMode: colorMode)
         resourcesByScale[key] = resource
         RenderInstrumentation.shared.recordCursorImageConversion()
         return resource
@@ -35,16 +41,30 @@ final class CursorRenderResourceCache {
     func clear() {
         resourcesByScale.removeAll(keepingCapacity: true)
         cachedRevision = nil
+        cachedColorMode = nil
     }
 
-    private func makeResource(for frame: CursorFrame, contentsScale: CGFloat) -> CursorRenderResource {
+    private func makeResource(
+        for frame: CursorFrame,
+        contentsScale: CGFloat,
+        colorMode: CursorColorMode
+    ) -> CursorRenderResource {
         if let image = frame.image {
             var proposedRect = CGRect(origin: .zero, size: frame.imageSizePoints)
             if let cgImage = image.cgImage(forProposedRect: &proposedRect, context: nil, hints: nil) {
+                let contents = colorMode.tintColor.flatMap {
+                    makeTintedImage(
+                        source: cgImage,
+                        imageSizePoints: frame.imageSizePoints,
+                        contentsScale: contentsScale,
+                        tintColor: $0
+                    )
+                } ?? cgImage
+
                 return CursorRenderResource(
                     revision: frame.revision,
                     contentsScale: contentsScale,
-                    contents: cgImage,
+                    contents: contents,
                     imageSizePoints: frame.imageSizePoints,
                     hotspotPoints: frame.hotspotPoints,
                     isFallback: frame.isFallback
@@ -52,12 +72,45 @@ final class CursorRenderResourceCache {
             }
         }
 
-        return makeVectorFallbackResource(frame: frame, contentsScale: contentsScale)
+        return makeVectorFallbackResource(frame: frame, contentsScale: contentsScale, colorMode: colorMode)
+    }
+
+    private func makeTintedImage(
+        source: CGImage,
+        imageSizePoints: CGSize,
+        contentsScale: CGFloat,
+        tintColor: CGColor
+    ) -> CGImage? {
+        let pixelWidth = max(1, Int(ceil(imageSizePoints.width * contentsScale)))
+        let pixelHeight = max(1, Int(ceil(imageSizePoints.height * contentsScale)))
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGImageAlphaInfo.premultipliedLast.rawValue
+
+        guard let context = CGContext(
+            data: nil,
+            width: pixelWidth,
+            height: pixelHeight,
+            bitsPerComponent: 8,
+            bytesPerRow: 0,
+            space: colorSpace,
+            bitmapInfo: bitmapInfo
+        ) else {
+            return nil
+        }
+
+        let pixelRect = CGRect(x: 0, y: 0, width: pixelWidth, height: pixelHeight)
+        context.interpolationQuality = .high
+        context.draw(source, in: pixelRect)
+        context.setBlendMode(.sourceIn)
+        context.setFillColor(tintColor)
+        context.fill(pixelRect)
+        return context.makeImage()
     }
 
     private func makeVectorFallbackResource(
         frame: CursorFrame,
-        contentsScale: CGFloat
+        contentsScale: CGFloat,
+        colorMode: CursorColorMode
     ) -> CursorRenderResource {
         let imageSize = CGSize(width: 18.2, height: 23.2)
         let pixelWidth = max(1, Int(ceil(imageSize.width * contentsScale)))
@@ -88,7 +141,7 @@ final class CursorRenderResourceCache {
         context.translateBy(x: 0, y: imageSize.height)
 
         context.addPath(Self.cursorPath)
-        context.setFillColor(NSColor.white.cgColor)
+        context.setFillColor(colorMode.tintColor ?? NSColor.white.cgColor)
         context.fillPath()
 
         context.addPath(Self.cursorPath)

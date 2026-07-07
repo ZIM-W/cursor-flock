@@ -44,6 +44,7 @@ final class SettingsStore {
         static let minimumScale = "settings.scale.minimumScale"
         static let maximumScale = "settings.scale.maximumScale"
         static let variationAmount = "settings.scale.variationAmount"
+        static let cursorColorMode = "settings.cursorColorMode"
         static let selectedPreset = "settings.selectedPreset"
     }
 
@@ -136,12 +137,13 @@ final class SettingsStore {
             scatterAndReturnParameters: scatter,
             orbitingFlockParameters: orbit,
             scaleSettings: scale,
+            cursorColorMode: stringEnum(Key.cursorColorMode, defaultValue: defaultsSettings.cursorColorMode),
             selectedPreset: optionalStringEnum(Key.selectedPreset)
         )
     }
 
     func save(_ settings: FlockSettings) {
-        defaults.set(2, forKey: Key.schemaVersion)
+        defaults.set(3, forKey: Key.schemaVersion)
         defaults.set(settings.enabled, forKey: Key.enabled)
         defaults.set(settings.launchAtLoginEnabled, forKey: Key.launchAtLoginEnabled)
         defaults.set(settings.cursorCount, forKey: Key.cursorCount)
@@ -182,6 +184,7 @@ final class SettingsStore {
         defaults.set(Double(settings.scaleSettings.minimumScale), forKey: Key.minimumScale)
         defaults.set(Double(settings.scaleSettings.maximumScale), forKey: Key.maximumScale)
         defaults.set(Double(settings.scaleSettings.variationAmount), forKey: Key.variationAmount)
+        defaults.set(settings.cursorColorMode.rawValue, forKey: Key.cursorColorMode)
         if let selectedPreset = settings.selectedPreset {
             defaults.set(selectedPreset.rawValue, forKey: Key.selectedPreset)
         } else {

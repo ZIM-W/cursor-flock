@@ -253,7 +253,8 @@ final class DisplayManager {
             let contentsScale = window.overlayView.layer?.contentsScale ?? window.backingScaleFactor
             let cursorResource = cursorRenderResourceCache.resource(
                 for: cursorFrame,
-                contentsScale: contentsScale
+                contentsScale: contentsScale,
+                colorMode: settings.cursorColorMode
             )
             window.overlayView.display(
                 members: members,

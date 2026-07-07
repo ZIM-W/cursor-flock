@@ -101,6 +101,15 @@ final class Settings {
         }
     }
 
+    var cursorColorMode: CursorColorMode {
+        get {
+            flockSettings.cursorColorMode
+        }
+        set {
+            flockSettings.cursorColorMode = newValue
+        }
+    }
+
     func save() {
         store.save(flockSettings)
     }

@@ -13,7 +13,7 @@
 - Live system cursor image and hotspot copying
 - Decorative flock-centred cursor members around the real cursor
 - Multiple flock patterns and quick presets
-- Speed, distance, opacity, scale, orientation, frame-rate, and idle controls
+- Speed, distance, color, opacity, scale, orientation, frame-rate, and idle controls
 - Launch at Login support
 - Local settings persistence with UserDefaults
 - Cached cursor render resources, persistent layer pools, and display-local filtering to reduce system impact
@@ -50,6 +50,7 @@ The menu includes:
 - Flock Speed and Speed Variation
 - Frame Rate
 - Opacity
+- Cursor Color
 - Scale & Depth
 - Orientation
 - Idle Behaviour

@@ -45,6 +45,7 @@ final class MenuBarController: NSObject {
     private var frameRateItems: [NSMenuItem] = []
     private var opacityModeItems: [NSMenuItem] = []
     private var baseOpacityItems: [NSMenuItem] = []
+    private var cursorColorItems: [NSMenuItem] = []
     private var scaleModeItems: [NSMenuItem] = []
     private var baseScaleItems: [NSMenuItem] = []
     private var depthStrengthItems: [NSMenuItem] = []
@@ -121,6 +122,9 @@ final class MenuBarController: NSObject {
             }
             item.state = approximately(value, settings.baseOpacity) ? .on : .off
         }
+        for item in cursorColorItems {
+            item.state = representedValue(item) == settings.cursorColorMode ? .on : .off
+        }
         for item in scaleModeItems {
             item.state = representedValue(item) == settings.flockSettings.scaleSettings.mode ? .on : .off
         }
@@ -181,6 +185,7 @@ final class MenuBarController: NSObject {
         frameRateItems = []
         opacityModeItems = []
         baseOpacityItems = []
+        cursorColorItems = []
         scaleModeItems = []
         baseScaleItems = []
         depthStrengthItems = []
@@ -221,6 +226,7 @@ final class MenuBarController: NSObject {
         menu.addItem(.separator())
         menu.addItem(makeOpacityItem())
         menu.addItem(makeBaseOpacityItem())
+        menu.addItem(makeCursorColorItem())
         menu.addItem(makeScaleItem())
         menu.addItem(.separator())
         menu.addItem(makeOrientationItem())
@@ -376,6 +382,16 @@ final class MenuBarController: NSObject {
         }
 
         settings.baseOpacity = opacity
+        settings.flockSettings.selectedPreset = nil
+        persistAndRefresh()
+    }
+
+    @objc private func setCursorColor(_ sender: NSMenuItem) {
+        guard let colorMode: CursorColorMode = representedValue(sender) else {
+            return
+        }
+
+        settings.cursorColorMode = colorMode
         settings.flockSettings.selectedPreset = nil
         persistAndRefresh()
     }
@@ -749,6 +765,19 @@ final class MenuBarController: NSObject {
         return item
     }
 
+    private func makeCursorColorItem() -> NSMenuItem {
+        let item = NSMenuItem(title: "Cursor Color", action: nil, keyEquivalent: "")
+        let submenu = NSMenu()
+        cursorColorItems = CursorColorMode.allCases.map { mode in
+            let menuItem = makeMenuItem(title: mode.displayName, action: #selector(setCursorColor), value: mode)
+            menuItem.image = Self.makeColorSwatch(for: mode)
+            return menuItem
+        }
+        cursorColorItems.forEach { submenu.addItem($0) }
+        item.submenu = submenu
+        return item
+    }
+
     private func makeScaleItem() -> NSMenuItem {
         let item = NSMenuItem(title: "Scale & Depth", action: nil, keyEquivalent: "")
         let submenu = NSMenu()
@@ -933,6 +962,41 @@ final class MenuBarController: NSObject {
         }
 
         image.isTemplate = true
+        return image
+    }
+
+    private static func makeColorSwatch(for mode: CursorColorMode) -> NSImage? {
+        let size = NSSize(width: 12, height: 12)
+        let image = NSImage(size: size, flipped: false) { rect in
+            let bounds = rect.insetBy(dx: 1, dy: 1)
+
+            if let components = mode.colorComponents {
+                NSColor(
+                    deviceRed: components.red,
+                    green: components.green,
+                    blue: components.blue,
+                    alpha: components.alpha
+                ).setFill()
+                NSBezierPath(ovalIn: bounds).fill()
+            } else {
+                let path = NSBezierPath(ovalIn: bounds)
+                NSColor.white.setFill()
+                path.fill()
+
+                NSGraphicsContext.saveGraphicsState()
+                path.addClip()
+                NSColor.black.setFill()
+                NSBezierPath(rect: CGRect(x: bounds.midX, y: bounds.minY, width: bounds.width / 2, height: bounds.height)).fill()
+                NSGraphicsContext.restoreGraphicsState()
+            }
+
+            NSColor.separatorColor.setStroke()
+            let outline = NSBezierPath(ovalIn: bounds)
+            outline.lineWidth = 1
+            outline.stroke()
+            return true
+        }
+        image.isTemplate = false
         return image
     }
 

@@ -36,8 +36,8 @@ struct OpacitySettings {
     }
 
     init(
-        mode: OpacityMode = .distanceFade,
-        baseOpacity: CGFloat = 0.85,
+        mode: OpacityMode = .solid,
+        baseOpacity: CGFloat = 1,
         minimumOpacity: CGFloat = 0.18,
         fadeExponent: CGFloat = 1.35
     ) {

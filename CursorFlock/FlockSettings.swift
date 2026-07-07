@@ -77,6 +77,89 @@ extension ScaleMode {
     }
 }
 
+enum CursorColorMode: String, CaseIterable {
+    case system
+    case black
+    case white
+    case red
+    case orange
+    case yellow
+    case green
+    case cyan
+    case blue
+    case purple
+    case pink
+}
+
+extension CursorColorMode {
+    var displayName: String {
+        switch self {
+        case .system:
+            return "System"
+        case .black:
+            return "Black"
+        case .white:
+            return "White"
+        case .red:
+            return "Red"
+        case .orange:
+            return "Orange"
+        case .yellow:
+            return "Yellow"
+        case .green:
+            return "Green"
+        case .cyan:
+            return "Cyan"
+        case .blue:
+            return "Blue"
+        case .purple:
+            return "Purple"
+        case .pink:
+            return "Pink"
+        }
+    }
+
+    var colorComponents: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)? {
+        switch self {
+        case .system:
+            return nil
+        case .black:
+            return (0.05, 0.05, 0.06, 1)
+        case .white:
+            return (0.94, 0.95, 0.97, 1)
+        case .red:
+            return (1.00, 0.23, 0.19, 1)
+        case .orange:
+            return (1.00, 0.58, 0.12, 1)
+        case .yellow:
+            return (1.00, 0.82, 0.18, 1)
+        case .green:
+            return (0.20, 0.78, 0.35, 1)
+        case .cyan:
+            return (0.10, 0.72, 0.86, 1)
+        case .blue:
+            return (0.18, 0.46, 0.95, 1)
+        case .purple:
+            return (0.56, 0.32, 0.92, 1)
+        case .pink:
+            return (1.00, 0.30, 0.58, 1)
+        }
+    }
+
+    var tintColor: CGColor? {
+        guard let colorComponents else {
+            return nil
+        }
+
+        return CGColor(
+            red: colorComponents.red,
+            green: colorComponents.green,
+            blue: colorComponents.blue,
+            alpha: colorComponents.alpha
+        )
+    }
+}
+
 enum FlockPreset: String, CaseIterable {
     case balancedFlock
     case migratingV
@@ -283,6 +366,7 @@ struct FlockSettings {
     var scatterAndReturnParameters: ScatterAndReturnParameters
     var orbitingFlockParameters: OrbitingFlockParameters
     var scaleSettings: ScaleSettings
+    var cursorColorMode: CursorColorMode
     var selectedPreset: FlockPreset?
 
     init(
@@ -309,6 +393,7 @@ struct FlockSettings {
         scatterAndReturnParameters: ScatterAndReturnParameters = ScatterAndReturnParameters(),
         orbitingFlockParameters: OrbitingFlockParameters = OrbitingFlockParameters(),
         scaleSettings: ScaleSettings = ScaleSettings(),
+        cursorColorMode: CursorColorMode = .system,
         selectedPreset: FlockPreset? = nil
     ) {
         self.enabled = enabled
@@ -333,6 +418,7 @@ struct FlockSettings {
         self.scatterAndReturnParameters = scatterAndReturnParameters
         self.orbitingFlockParameters = orbitingFlockParameters
         self.scaleSettings = scaleSettings
+        self.cursorColorMode = cursorColorMode
         self.selectedPreset = selectedPreset
     }
 
