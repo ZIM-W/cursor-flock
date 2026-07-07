@@ -23,7 +23,7 @@ Cursor Flock does not use Electron, Tauri, web technologies, screenshots, input 
 ## Install From GitHub Releases
 
 1. Download `CursorFlock-VERSION-macos.dmg` and _(optional)_`CursorFlock-VERSION-macos.dmg.sha256` from [GitHub Releases](https://github.com/ZIM-W/cursor-flock/releases).
-2. _(Optional)_Verify the checksum:
+2. _(Optional)_ Verify the checksum:
 
 ```sh
 shasum -a 256 -c CursorFlock-VERSION-macos.dmg.sha256
