@@ -13,7 +13,8 @@ cd "${REPO_ROOT}"
 VERSION="${1:-${VERSION:-}}"
 [[ -n "${VERSION}" ]] || fail "set VERSION=0.1.0 or pass the version as the first argument"
 
-APP_PATH="${REPO_ROOT}/release-output/Cursor Flock.app"
+OUTPUT_DIR="${REPO_ROOT}/release-output/${VERSION}"
+APP_PATH="${OUTPUT_DIR}/Cursor Flock.app"
 [[ -d "${APP_PATH}" ]] || fail "app not found at ${APP_PATH}; run scripts/build_release.sh first"
 
 echo "==> Ad-hoc signing ${APP_PATH}"

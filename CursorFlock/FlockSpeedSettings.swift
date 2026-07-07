@@ -36,7 +36,7 @@ struct FlockSpeedSettings {
     }
 
     static func clampedMaximumSpeed(_ value: CGFloat) -> CGFloat {
-        min(max(value, 120), 1600)
+        min(max(value, 120), 2400)
     }
 
     static func clampedMinimumSpeedRatio(_ value: CGFloat) -> CGFloat {
@@ -72,13 +72,13 @@ extension FlockSpeedPreset {
     var maximumSpeed: CGFloat {
         switch self {
         case .slow:
-            return 280
+            return 400
         case .balanced:
-            return 520
+            return 900
         case .fast:
-            return 850
+            return 1450
         case .veryFast:
-            return 1200
+            return 2000
         }
     }
 

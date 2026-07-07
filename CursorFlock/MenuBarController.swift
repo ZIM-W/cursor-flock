@@ -154,7 +154,7 @@ final class MenuBarController: NSObject {
     }
 
     private func configureStatusItem() {
-        let statusItem = NSStatusBar.system.statusItem(withLength: 28)
+        let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         statusItem.isVisible = true
         self.statusItem = statusItem
 
@@ -926,23 +926,28 @@ final class MenuBarController: NSObject {
     }
 
     private static func makeStatusIcon() -> NSImage {
-        if let symbol = NSImage(
-            systemSymbolName: "cursorarrow",
-            accessibilityDescription: "Cursor Flock"
-        ) {
-            symbol.isTemplate = true
-            return symbol
-        }
-
         let size = NSSize(width: 18, height: 18)
         let image = NSImage(size: size, flipped: false) { _ in
-            NSColor.black.setFill()
-            drawCursorIcon(offsetX: 3.2, offsetY: 1.8, scale: 0.92)
+            drawCursorClusterIcon()
             return true
         }
 
         image.isTemplate = true
         return image
+    }
+
+    private static func drawCursorClusterIcon() {
+        NSColor.black.setFill()
+        drawCursorIcon(offsetX: 0, offsetY: 6, scale: 0.80)
+
+        NSColor.black.withAlphaComponent(0.70).setFill()
+        drawCursorIcon(offsetX: -1, offsetY: -1.8, scale: 0.70)
+
+        NSColor.black.withAlphaComponent(0.70).setFill()
+        drawCursorIcon(offsetX: 10, offsetY: 6, scale: 0.70)
+
+        NSColor.black.withAlphaComponent(0.70).setFill()
+        drawCursorIcon(offsetX: 7.3, offsetY: -1, scale: 0.70)
     }
 
     private static func drawCursorIcon(offsetX: CGFloat, offsetY: CGFloat, scale: CGFloat) {

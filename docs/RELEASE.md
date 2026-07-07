@@ -13,7 +13,7 @@ chmod +x scripts/*.sh
 ./scripts/create_github_release_notes.sh
 ```
 
-The release artifacts are written to `release-output/`:
+The release artifacts are written to `release-output/$VERSION/`:
 
 - `CursorFlock-VERSION-macos.dmg`
 - `CursorFlock-VERSION-macos.dmg.sha256`
@@ -38,10 +38,10 @@ Cursor Flock v0.1.0
 ```
 
 6. Mark it as a pre-release.
-7. Upload:
+7. Upload files from `release-output/0.1.0/`:
     * CursorFlock-0.1.0-macos.dmg
     * CursorFlock-0.1.0-macos.dmg.sha256
-8. Paste CursorFlock-0.1.0-release-notes.md.
+8. Paste `release-output/0.1.0/CursorFlock-0.1.0-release-notes.md`.
 9. Publish the release.
 
 This workflow does not use Apple notarization, Developer ID signing, GitHub APIs, or GitHub CLI.

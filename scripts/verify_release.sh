@@ -13,7 +13,7 @@ cd "${REPO_ROOT}"
 VERSION="${1:-${VERSION:-}}"
 [[ -n "${VERSION}" ]] || fail "set VERSION=0.1.0 or pass the version as the first argument"
 
-OUTPUT_DIR="${REPO_ROOT}/release-output"
+OUTPUT_DIR="${REPO_ROOT}/release-output/${VERSION}"
 APP_PATH="${OUTPUT_DIR}/Cursor Flock.app"
 INFO_PLIST="${APP_PATH}/Contents/Info.plist"
 DMG_NAME="CursorFlock-${VERSION}-macos.dmg"
