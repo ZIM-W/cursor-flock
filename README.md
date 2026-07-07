@@ -22,8 +22,8 @@ Cursor Flock does not use Electron, Tauri, web technologies, screenshots, input 
 
 ## Install From GitHub Releases
 
-1. Download `CursorFlock-VERSION-macos.dmg` and (Optional)`CursorFlock-VERSION-macos.dmg.sha256` from [GitHub Releases](https://github.com/ZIM-W/cursor-flock/releases).
-2. (Optional)Verify the checksum:
+1. Download `CursorFlock-VERSION-macos.dmg` and _(optional)_`CursorFlock-VERSION-macos.dmg.sha256` from [GitHub Releases](https://github.com/ZIM-W/cursor-flock/releases).
+2. _(Optional)_Verify the checksum:
 
 ```sh
 shasum -a 256 -c CursorFlock-VERSION-macos.dmg.sha256
@@ -76,18 +76,6 @@ xcodebuild -project CursorFlock.xcodeproj -scheme CursorFlock -configuration Deb
 
 The free GitHub Releases preview workflow is documented in [docs/RELEASE.md](docs/RELEASE.md). It builds a Release app, ad-hoc signs it, creates a DMG, verifies the package, generates a SHA-256 checksum, and creates release notes.
 
-Quick command summary:
-
-```sh
-export VERSION="0.1.0"
-chmod +x scripts/*.sh
-./scripts/build_release.sh
-./scripts/adhoc_sign_app.sh
-./scripts/create_dmg.sh
-./scripts/verify_release.sh
-./scripts/generate_checksums.sh
-./scripts/create_github_release_notes.sh
-```
 
 This workflow does not use Developer ID signing, Apple notarization, paid Apple Developer credentials, GitHub APIs, or GitHub CLI.
 
